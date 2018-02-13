@@ -42,9 +42,9 @@ class Menu extends Component {
   }
 
 //현재 순회하고 있는 지역데이터도 넘겨주어야 한다
-  _makeDivtagAreaAndStocks = (arr,serviceTypeData) => {
+  _makeDivtagAreaAndStocks = (arr,serviceTypeData,serviceTypeMenus) => {
     const reaults = arr.map((element) => {
-      return <AreaAndStock area={element} data={ serviceTypeData }/>
+      return <AreaAndStock area={element} data={ serviceTypeData } menus={serviceTypeMenus}/>
     })
     return reaults
   }
@@ -58,6 +58,9 @@ class Menu extends Component {
     const removedDuplicateLunchMenus = this._getArrayOfMenus(lunchTypeData);
     const removedDuplicateDinnerMenus = this._getArrayOfMenus(dinnerTypeData);
     const areaList = this._getAreaList(rawData);
+
+    // console.log(removedDuplicateLunchMenus)
+    // console.log(removedDuplicateDinnerMenus)
     return(
       <div>
           <h2>lunch</h2>
@@ -70,7 +73,7 @@ class Menu extends Component {
               </div>
 
               <div className="areaAndStockList">
-                  { this._makeDivtagAreaAndStocks(areaList, lunchTypeData)}
+                  { this._makeDivtagAreaAndStocks(areaList, lunchTypeData,removedDuplicateLunchMenus)}
               </div>
           </div>
 
@@ -84,7 +87,7 @@ class Menu extends Component {
               </div>
 
               <div className="areaAndStockList">
-                  { this._makeDivtagAreaAndStocks(areaList, dinnerTypeData)}
+                  { this._makeDivtagAreaAndStocks(areaList, dinnerTypeData, removedDuplicateDinnerMenus)}
               </div>
           </div>
       </div>

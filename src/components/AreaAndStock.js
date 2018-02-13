@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './AreaAndStock.css';
+import Stock from './Stock';
 
 class AreaAndStock extends Component {
 //api의 지역정보에 한글이 없어서.... ㅠㅠㅠ
@@ -19,9 +20,29 @@ _changeHangle = (area) => {
   if(area === 'kurly') return '새벽';
 }
 
+_filteringArea = (data, area) => {
+    const filteredData = data.filter(object => {
+      return object.area === area;
+    })
+    return filteredData;
+}
+
+_getStock = (arr, menuData) => {
+  const stock = arr.map((element) => {
+      return <div className="remainStock">
+                <Stock menuName={element} menuData={menuData}/>
+             </div>
+  })
+  return stock;
+}
+
   render(){
-    console.log(this.props)
-    console.log(this.props.area)
+    // console.log(this.props)
+    const data = this.props.data;
+    const area = this.props.area;
+    const menus = this.props.menus;
+    const filteredData = this._filteringArea(data, area);
+    //console.log(filteredData)
       return(
         <div>
             <div className="areaTitle">
@@ -30,6 +51,7 @@ _changeHangle = (area) => {
                 </div>
             </div>
 
+              { this._getStock(menus, filteredData) }
         </div>
       )
   }
