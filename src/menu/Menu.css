@@ -1,0 +1,12 @@
+.menuTitle {
+  background-color: green;
+  width: 160px;
+  height: 40px;
+  border: solid 0.05px;
+}
+.menu {
+  background-color: gray;
+  width: 160px;
+  height: 40px;
+  border: solid 0.05px;
+}
