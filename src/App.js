@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Menu from './menu/Menu';
+import Menu from './components/Menu';
 
 class App extends Component {
   // Render: componentWillMount() -> render() -> componentDidMount()

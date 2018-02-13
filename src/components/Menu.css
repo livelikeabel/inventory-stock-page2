@@ -10,3 +10,14 @@
   height: 40px;
   border: solid 0.05px;
 }
+
+.menuList {
+}
+
+.areaAndStockList {
+  display: flex;
+}
+
+.lunch {
+  display: flex;
+}
