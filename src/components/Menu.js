@@ -60,7 +60,7 @@ class Menu extends Component {
     const areaList = this._getAreaList(rawData);
     return(
       <div>
-          lunch
+          <h2>lunch</h2>
           <div className="lunch">
               <div className="menuList">
                   <div className="menuTitle">
@@ -74,12 +74,19 @@ class Menu extends Component {
               </div>
           </div>
 
-        <div>dinner
-          <div className="menuTitle">
-            menu
+          <h2>dinner</h2>
+          <div className="dinner">
+              <div className="menuList">
+                  <div className="menuTitle">
+                    menu
+                  </div>
+                  { this._makeDivtagList(removedDuplicateDinnerMenus)}
+              </div>
+
+              <div className="areaAndStockList">
+                  { this._makeDivtagAreaAndStocks(areaList, dinnerTypeData)}
+              </div>
           </div>
-          { this._makeDivtagList(removedDuplicateDinnerMenus)}
-        </div>
       </div>
     )
   }
