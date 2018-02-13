@@ -1,0 +1,12 @@
+.sumTtile{
+  background-color: paleturquoise;
+  width: 80px;
+  height: 40px;
+  border: solid 0.05px;
+}
+.sumStock{
+  background-color: lightpink;
+  width: 80px;
+  height: 40px;
+  border: solid 0.05px;
+}

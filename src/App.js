@@ -13,7 +13,7 @@ class App extends Component {
   }
 
   _getServiceTypeDatas(serviceType) {
-    console.log(this.state.rawData)
+    //console.log(this.state.rawData)
     const serviceTypeData = this.state.rawData.filter(object => {
       return object.serviceType === serviceType;
     });
@@ -29,7 +29,7 @@ class App extends Component {
   }
 
   _callApi = () => {
-    return fetch("https://apiv2.plating.co.kr/menu/daily?date=2018-02-13")
+    return fetch("https://apiv2.plating.co.kr/menu/daily?date=2018-02-14")
     .then(response => response.json())
     .then(json => json)
     .catch(err => console.log(err))
@@ -37,6 +37,7 @@ class App extends Component {
 
   _renderComponents = () => {
     const rawData = this.state.rawData;
+    //console.log(rawData)
     return (
       <div className="template">
         <div className="lunch">

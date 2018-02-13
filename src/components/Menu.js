@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Menu.css';
 import AreaAndStock from './AreaAndStock';
+import Sum from './Sum';
 
 class Menu extends Component {
   // 런치 데이터를 가지고 지역을 뽑아야 하나...? 새벽을 제외하고 점심 저녁은 같으니까 점심데이터 가져다 쓸까..?
@@ -58,9 +59,10 @@ class Menu extends Component {
     const removedDuplicateLunchMenus = this._getArrayOfMenus(lunchTypeData);
     const removedDuplicateDinnerMenus = this._getArrayOfMenus(dinnerTypeData);
     const areaList = this._getAreaList(rawData);
-
-    // console.log(removedDuplicateLunchMenus)
-    // console.log(removedDuplicateDinnerMenus)
+    // console.log(rawData)
+    // console.log(lunchTypeData)
+     // console.log(removedDuplicateLunchMenus)
+     // console.log(removedDuplicateDinnerMenus)
     return(
       <div>
           <h2>lunch</h2>
@@ -75,6 +77,9 @@ class Menu extends Component {
               <div className="areaAndStockList">
                   { this._makeDivtagAreaAndStocks(areaList, lunchTypeData,removedDuplicateLunchMenus)}
               </div>
+              <div>
+                  <Sum menuList={removedDuplicateLunchMenus} serviceTypeData={lunchTypeData}/>
+              </div>
           </div>
 
           <h2>dinner</h2>
@@ -88,6 +93,9 @@ class Menu extends Component {
 
               <div className="areaAndStockList">
                   { this._makeDivtagAreaAndStocks(areaList, dinnerTypeData, removedDuplicateDinnerMenus)}
+              </div>
+              <div>
+                  <Sum menuList={removedDuplicateDinnerMenus} serviceTypeData={dinnerTypeData}/>
               </div>
           </div>
       </div>
