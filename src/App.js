@@ -40,9 +40,7 @@ class App extends Component {
     //console.log(rawData)
     return (
       <div className="template">
-        <div className="lunch">
           <Menu rawData={ rawData }/>
-        </div>
       </div>
     )
   }

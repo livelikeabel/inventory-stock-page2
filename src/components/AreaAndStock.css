@@ -1,13 +1,21 @@
 .areaTitle {
-  background-color: palegreen;
+  background: #E3FDFD;
   width: 80px;
   height: 40px;
-  border: solid 0.05px;
+  border: solid 0.05px #71C9CE;
+  line-height: 45px;
+  font-size: 20px;
+  color: #0b7285;
+  font-weight: 350;
 }
 
 .remainStock {
-  background-color: beige;
+  background: #E3FDFD;
   width: 80px;
   height: 40px;
-  border: solid 0.05px;
+  border: solid 0.05px #71C9CE;
+  line-height: 42px;
+  font-size: 23px;
+  color: #708090;
+  font-weight: 400;
 }

@@ -64,41 +64,45 @@ class Menu extends Component {
      // console.log(removedDuplicateLunchMenus)
      // console.log(removedDuplicateDinnerMenus)
     return(
-      <div>
-          <h2>lunch</h2>
-          <div className="lunch">
-              <div className="menuList">
-                  <div className="menuTitle">
-                    menu
-                  </div>
-                  { this._makeDivtagList(removedDuplicateLunchMenus)}
-              </div>
+          <div className="template2">
+              <div className='serviceTemplate'>
+                  <div className="title">LUNCH</div>
+                  <div className="lunch">
+                      <div className="menuList">
+                          <div className="menuTitle">
+                            menu
+                          </div>
+                          { this._makeDivtagList(removedDuplicateLunchMenus)}
+                      </div>
 
-              <div className="areaAndStockList">
-                  { this._makeDivtagAreaAndStocks(areaList, lunchTypeData,removedDuplicateLunchMenus)}
-              </div>
-              <div>
-                  <Sum menuList={removedDuplicateLunchMenus} serviceTypeData={lunchTypeData}/>
+                      <div className="areaAndStockList">
+                          { this._makeDivtagAreaAndStocks(areaList, lunchTypeData,removedDuplicateLunchMenus)}
+                      </div>
+                      <div>
+                          <Sum menuList={removedDuplicateLunchMenus} serviceTypeData={lunchTypeData}/>
+                      </div>
+                  </div>
+            </div>
+
+              <div className='serviceTemplate'>
+                  <div className="title">DINNER</div>
+                  <div className="dinner">
+                      <div className="menuList">
+                          <div className="menuTitle">
+                            menu
+                          </div>
+                          { this._makeDivtagList(removedDuplicateDinnerMenus)}
+                      </div>
+
+                      <div className="areaAndStockList">
+                          { this._makeDivtagAreaAndStocks(areaList, dinnerTypeData, removedDuplicateDinnerMenus)}
+                      </div>
+                      <div>
+                          <Sum menuList={removedDuplicateDinnerMenus} serviceTypeData={dinnerTypeData}/>
+                      </div>
+                  </div>
               </div>
           </div>
-
-          <h2>dinner</h2>
-          <div className="dinner">
-              <div className="menuList">
-                  <div className="menuTitle">
-                    menu
-                  </div>
-                  { this._makeDivtagList(removedDuplicateDinnerMenus)}
-              </div>
-
-              <div className="areaAndStockList">
-                  { this._makeDivtagAreaAndStocks(areaList, dinnerTypeData, removedDuplicateDinnerMenus)}
-              </div>
-              <div>
-                  <Sum menuList={removedDuplicateDinnerMenus} serviceTypeData={dinnerTypeData}/>
-              </div>
-          </div>
-      </div>
     )
   }
 }

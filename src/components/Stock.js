@@ -25,7 +25,9 @@ class Stock extends Component {
 
 
     return(
-      <div>{ stock }</div>
+      <div className={ stock === 0 ? "emptyStock" : "stock"}>
+          { stock }
+      </div>
     )
   }
 }

@@ -1,14 +1,51 @@
+
+
+.template2 {
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  display: flex;
+
+}
+
+.serviceTemplate{
+  margin: 1rem;
+  margin-top: 8rem;
+}
+
+
+.title {
+  background: #71C9CE;
+  color: white;
+  width: 960px;
+  height: 80px;
+  font-weight: 300;
+  font-size: 3rem;
+  text-align: center;
+  padding-top: 2rem;
+  margin-top: 5rem;
+  border: solid 0.1px #71C9CE;
+}
+
 .menuTitle {
-  background-color: green;
+  background: #E3FDFD;
   width: 160px;
   height: 40px;
-  border: solid 0.05px;
+  border: solid 0.05px #71C9CE;
+  line-height: 40px;
+  font-size: 27px;
+  color: #0b7285;
+  font-weight: 350;
 }
 .menu {
-  background-color: gray;
+  background: #E3FDFD;
   width: 160px;
   height: 40px;
-  border: solid 0.05px;
+  border: solid 0.05px #71C9CE;
+  line-height: 42px;
+  font-size: 20px;
+  color: #708090;
+  font-weight: 400;
 }
 
 .menuList {
