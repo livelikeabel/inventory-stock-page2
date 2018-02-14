@@ -8,8 +8,22 @@ class App extends Component {
 
   state = {};
 
-  componentDidMount() {
-    this._getRawData()
+  componentWillMount() {
+    const nowDate = this._getDate();
+    console.log(nowDate)
+    this._getRawData(nowDate)
+  }
+
+  _getDate = () => {
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0!
+    var yyyy = today.getFullYear();
+
+    if(dd<10) dd='0'+dd;
+    if(mm<10) mm='0'+mm;
+    today = yyyy+'-'+mm+'-'+dd;
+    return today;
   }
 
   _getServiceTypeDatas(serviceType) {
@@ -21,15 +35,15 @@ class App extends Component {
   }
 
   // 아래의 function들은 api 불러오는 함수이다.
-  _getRawData = async() => {
-    const rawData = await this._callApi()
+  _getRawData = async(nowDate) => {
+    const rawData = await this._callApi(nowDate)
     this.setState({
       rawData
     })
   }
 
-  _callApi = () => {
-    return fetch("https://apiv2.plating.co.kr/menu/daily?date=2018-02-14")
+  _callApi = (nowDate) => {
+    return fetch(`https://apiv2.plating.co.kr/menu/daily?date=${nowDate}`)
     .then(response => response.json())
     .then(json => json)
     .catch(err => console.log(err))
